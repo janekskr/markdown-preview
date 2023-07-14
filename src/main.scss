@@ -1,0 +1,157 @@
+@import "./constants/breakpoints";
+@import "./constants/colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root,
+main {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+
+  main {
+    display: flex;
+    display: flex;
+    overflow: hidden;
+    @include md {
+      flex-direction: column;
+    }
+
+    #preview {
+      flex: 1;
+      padding: 32px;
+      font-size: 18px;
+      color: $previewer-color;
+      background: $previewer-bgcolor;
+      white-space: pre;
+      overflow-y: auto;
+
+      @include md {
+        padding: 20px;
+      }
+
+      @include xs {
+        font-size: 18px;
+      }
+
+      @include xxs {
+        font-size: 16px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      ul,
+      ol {
+        margin-left: calc(20px + 2em);
+
+        @include xxxs {
+          margin-left: 26px;
+        }
+        li {
+            margin-top: .5em
+        }
+        li:first-child {
+            margin-top: 0;
+        }
+      }
+      a {
+        color: $link-color;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid $border-color;
+        line-height: 1.25;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      pre {
+        background: $pre-bgcolor;
+        padding: 16px;
+        color: $pre-color;
+        overflow-x: auto;
+
+        code {
+            background-color: transparent;
+        }
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+
+        td,
+        th {
+          border: 1px solid $border-color;
+          padding: 6px 13px;
+          line-height: 1.5;
+          text-align: left;
+        }
+      }
+
+      code {
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        white-space: break-spaces;
+        background-color: $code-bgcolor;
+        border-radius: 6px;
+      }
+
+      blockquote {
+        padding: 0 1em;
+        color: $quote-color;
+        border-left: .25em solid $quote-border-color;
+      }
+    }
+
+    #editor {
+      flex: 1;
+      padding: 32px;
+      font-size: 20px;
+      background: $editor-bgcolor;
+      color: $editor-color;
+      overflow-y: auto;
+
+      @include md {
+        padding: 20px;
+      }
+
+      @include xs {
+        font-size: 18px;
+      }
+
+      @include xxs {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+#preview > * {
+  margin-bottom: 16px;
+  white-space: normal;
+}
